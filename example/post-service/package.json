@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "concurrently \"pnpm schema:print --watch\" \"tsx watch src/index.ts\"",
     "generate": "graphql-codegen --config ../codegen.ts",
