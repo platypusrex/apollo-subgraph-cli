@@ -1,17 +1,13 @@
-import { parse } from 'node:path';
 import fs from 'fs-extra';
 import { Command } from 'commander';
-import chokidar from 'chokidar';
-import chalk from 'chalk';
 import { cliBanner, commands } from './constants';
 import { tasks } from './tasks';
+import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths } from './prompts';
 import {
+  buildFileWatcher,
   generateSubgraphSchema,
   getSubgraphArgsFromCosmicConfigFile,
-  logPrefix,
-  parseGlobPatterns,
 } from './utils';
-import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths } from './prompts';
 
 (async () => {
   const packageJSON = await fs.readJson('./package.json');
@@ -29,7 +25,7 @@ import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths }
   schema
     .command(commands.check)
     .option('-c, --config <path-to-subgraph-config>', 'The path to your subgraph config file')
-    .option('-s, --schema <schema-location...>', "Location of your subgraph's typeDefs")
+    .option('-s, --schema <schema-location...>', 'Location of your subgraph\'s typeDefs')
     .action(async (options) => {
       cliBanner.header('schema check');
 
@@ -51,7 +47,7 @@ import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths }
   schema
     .command(commands.print)
     .option('-c, --config <path-to-subgraph-config>', 'The path to your subgraph config file')
-    .option('-s, --schema <schema-location...>', "Location of your subgraph's typeDefs")
+    .option('-s, --schema <schema-location...>', 'Location of your subgraph\'s typeDefs')
     .option('-o, --output <output-path>', 'The path to the printed schema file')
     .option('-w, --watch', 'Watch for file changes and print the resulting schema file')
     .action(async (options) => {
@@ -69,34 +65,7 @@ import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths }
           }
         }
 
-        const schemaPaths = await parseGlobPatterns(gqlSchemaPath, 'file');
-        const watcher = chokidar.watch(schemaPaths, { persistent: true });
-
-        const printedPaths = schemaPaths.map((path) => {
-          const { name, ext } = parse(path);
-          return ` - ${chalk.green(name + ext)}`;
-        }).join('\n');
-        console.log(`${logPrefix('info', 'INFO')}: Watching for schema changes in`);
-        console.log(printedPaths);
-
-        watcher.on('change', async (filePath) => {
-          const { name, ext } = parse(filePath);
-          try {
-            await generateSubgraphSchema({ paths: gqlSchemaPath, output: outputPath });
-            console.info(
-              `${logPrefix('success', 'CHANGE DETECTED')}:${logPrefix('success', name + ext)} Writing changes to ${chalk.green(outputPath)}`
-            );
-          } catch (e) {
-            if (e instanceof Error) {
-              console.error(e.message);
-            }
-          }
-        });
-
-        watcher.on('error', async (e) => {
-          await watcher?.close();
-          console.error(e);
-        });
+        await buildFileWatcher(gqlSchemaPath, outputPath);
       } else {
         cliBanner.header('schema print');
 
@@ -118,7 +87,7 @@ import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths }
 
   schema.command(commands.init).action(async () => {
     cliBanner.header('schema init');
-    console.log("Let's get started by answering a few questions about your service.\n");
+    console.log('Let\'s get started by answering a few questions about your service.\n');
 
     const schemaPaths = await getSchemaPaths();
     const outputPath = await getOutputPath();

@@ -1,8 +1,8 @@
 import { join } from 'node:path';
 import { writeFileSync } from 'node:fs';
 import type { ListrTask } from 'listr2';
-import { subgraphConfigTemplate } from '../templates';
 import type { ListrContext } from '../types';
+import { subgraphConfigTemplate } from '../templates';
 
 
 const subTaskOptions = {

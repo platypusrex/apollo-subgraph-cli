@@ -1,8 +1,11 @@
-import { GraphQLSchema } from 'graphql';
+import type { GraphQLSchema } from 'graphql';
 import { CodeFileLoader } from '@graphql-tools/code-file-loader';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
-import { loadSchema as loadSchemaToolkit, UnnormalizedTypeDefPointer } from '@graphql-tools/load';
-import { LoadSchemaOptions } from '@graphql-tools/load/typings/schema';
+import type { LoadSchemaOptions } from '@graphql-tools/load/typings/schema';
+import {
+  loadSchema as loadSchemaToolkit,
+  type UnnormalizedTypeDefPointer,
+} from '@graphql-tools/load';
 
 export const defaultSchemaLoadOptions = {
   assumeValidSDL: true,

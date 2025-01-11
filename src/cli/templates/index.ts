@@ -1,5 +1,3 @@
-import { scripts } from '../constants';
-
 export const esBuildESMTemplate = `
 const require = (await import("node:module")).createRequire(import.meta.url);
 const __filename = (await import("node:url")).fileURLToPath(import.meta.url);
@@ -26,14 +24,3 @@ const config: SubgraphConfig = {
 export default config
 `;
 };
-
-export const postCommitHookTemplate = (commandOnly?: boolean) =>
-  !commandOnly
-    ? `#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no-install ${scripts.commitAmend}
-`
-    : `npx --no-install ${scripts.commitAmend}`;
-
-export const postCommitHookJSTemplate = (configStr: string) => `module.exports = ${configStr}`;

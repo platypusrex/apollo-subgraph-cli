@@ -1,3 +1,4 @@
+export * from './buildFileWatcher';
 export * from './commaSeparatedList';
 export * from './generateSubgraphSchema';
 export * from './getSubgraphArgsFromCosmicConfigFile';
