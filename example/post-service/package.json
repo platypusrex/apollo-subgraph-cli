@@ -1,0 +1,37 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"pnpm schema:print --watch\" \"tsx watch src/index.ts\"",
+    "generate": "graphql-codegen --config ../codegen.ts",
+    "schema:print": "subgraph schema print --config subgraph.config.ts",
+    "schema:check": "subgraph schema check --config subgraph.config.ts"
+  },
+  "keywords": [],
+  "author": "Frank Cooke",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.3",
+    "@graphql-codegen/typescript": "4.1.2",
+    "@graphql-codegen/typescript-resolvers": "4.4.1",
+    "@types/node": "^22.10.5",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@apollo/subgraph": "^2.9.3",
+    "@graphql-tools/graphql-file-loader": "^8.0.10",
+    "@graphql-tools/load": "^8.0.11",
+    "@graphql-tools/load-files": "^7.0.0",
+    "@graphql-tools/merge": "^9.0.16",
+    "apollo-subgraph-cli": "file:apollo-subgraph-cli-1.0.0.tgz",
+    "apollo-subgraph-cli-1.0.0": "link:apollo-subgraph-cli-1.0.0",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "graphql-yoga": "^5.10.8",
+    "tsx": "^4.19.2"
+  }
+}

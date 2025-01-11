@@ -1,0 +1,13 @@
+1. Figure out declaration files
+ - one needed for config type
+ - do I need to package declaration files for the cli?
+2. Implement file watcher for print command
+ - potentially an issue with the watcher firing multiple times on a single change
+3. Prevent cli from crashing when attempting to programmatically add the files for staging (init command)
+4. Should we have a more nested command flow?
+ - current ex: subgraph-schema print
+ - potential ex: subgraph schema print
+                 subgraph schema check
+                 subgraph router dev
+5. add linting and formatting (biome)
+6. add tests (vitest) and figure out how to test this cli properly

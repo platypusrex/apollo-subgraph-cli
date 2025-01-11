@@ -1,0 +1,101 @@
+{
+  "name": "apollo-subgraph-cli",
+  "author": "Frank Cooke",
+  "description": "A CLI for subgraph schema management",
+  "keywords": [
+    "apollo",
+    "apollo-federation",
+    "federation",
+    "subgraph",
+    "graphql",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platypusrex/apollo-subgraph-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/platypusrex/apollo-subgraph-cli/issues"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.cjs",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "subgraph": "bin/subgraph.mjs",
+    "subgraph-cjs": "bin/subgraph-cjs.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm clean && tsup",
+    "clean": "rimraf dist",
+    "format": "pnpm biome format",
+    "format:fix": "pnpm biome format --fix",
+    "lint": "pnpm biome lint",
+    "lint:fix": "pnpm biome lint --fix",
+    "check:types": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.10.5",
+    "chokidar": "^4.0.3",
+    "execa": "^9.5.2",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "chokidar": ">=4",
+    "graphql": ">=16.5"
+  },
+  "dependencies": {
+    "@apollo/subgraph": "^2.9.3",
+    "@graphql-tools/code-file-loader": "^8.1.12",
+    "@graphql-tools/graphql-file-loader": "^8.0.10",
+    "@graphql-tools/load": "^8.0.11",
+    "@inquirer/prompts": "^7.2.1",
+    "boxen": "^8.0.1",
+    "chalk": "^5.4.1",
+    "commander": "^13.0.0",
+    "cosmiconfig": "^9.0.0",
+    "cosmiconfig-typescript-loader": "^6.1.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.2.0",
+    "listr2": "^8.2.5",
+    "yaml": "^2.7.0"
+  }
+}
