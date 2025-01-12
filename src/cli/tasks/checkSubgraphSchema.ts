@@ -12,7 +12,7 @@ const subTaskOptions = {
 export const checkSubgraphSchema: ListrTask<ListrContextCheckSchema> = {
   title: 'Check subgraph schema',
   task: (_, task) =>
-    task.newListr(
+    task.newListr<ListrContextCheckSchema>(
       [
         {
           title: 'Checking schema file output...',
