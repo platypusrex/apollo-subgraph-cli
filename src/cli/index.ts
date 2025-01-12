@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import { Command } from 'commander';
 import { cliBanner, commands } from './constants';
 import { tasks } from './tasks';
-import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths } from './prompts';
+import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths, confirmAddFilesToGitStaging } from './prompts';
 import {
   buildFileWatcher,
   generateSubgraphSchema,
@@ -93,11 +93,13 @@ import {
     const outputPath = await getOutputPath();
     const printScriptName = await getPrintScriptName();
     const checkScriptName = await getCheckScriptName();
+    const git = await confirmAddFilesToGitStaging()
 
     console.log('\n');
 
     try {
       await tasks.init.run({
+        git,
         printScriptName,
         checkScriptName,
         schema: {

@@ -1,5 +1,5 @@
 import { Listr, type ListrBaseClassOptions } from 'listr2';
-import type { ListrContext } from '../types';
+import type { ListrContext, ListrInitContext } from '../types';
 import { generateSubgraphConfig } from './generateSubgraphConfig';
 import { generateSubgraphSchema } from './generateSubgraphSchema';
 import { checkSubgraphSchema } from './checkSubgraphSchema';
@@ -12,7 +12,7 @@ const listrOptions: ListrBaseClassOptions = {
 };
 
 export const tasks = {
-  init: new Listr<ListrContext>(
+  init: new Listr<ListrInitContext>(
     [
       generateSubgraphConfig,
       generateSubgraphSchema,
