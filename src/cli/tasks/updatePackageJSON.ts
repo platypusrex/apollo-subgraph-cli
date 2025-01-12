@@ -14,7 +14,7 @@ const subTaskOptions = {
 export const updatePackageJSON: ListrTask<ListrContext> = {
   title: 'Update package.json',
   task: (_, task) =>
-    task.newListr(
+    task.newListr<ListrContext>(
       [
         {
           title: 'Adding and updating npm scripts',

@@ -16,7 +16,7 @@ const subTaskOptions = {
 export const generateSubgraphSchema: ListrTask<ListrContext> = {
   title: 'Generate subgraph schema file',
   task: (_, task) =>
-    task.newListr(
+    task.newListr<ListrContext>(
       [
         {
           title: 'Printing schema file output...',

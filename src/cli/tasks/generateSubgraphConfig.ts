@@ -12,7 +12,7 @@ const subTaskOptions = {
 export const generateSubgraphConfig: ListrTask<ListrContext> = {
   title: 'Generate subgraph config file',
   task: (_, task) =>
-    task.newListr(
+    task.newListr<ListrContext>(
       [
         {
           title: 'Writing subgraph config to project root...',
