@@ -5,6 +5,6 @@ export default defineConfig({
     watch: false,
     globals: true,
     environment: 'node',
-    include: ['test/*.test.ts']
-  }
-})
+    include: ['test/*.test.ts'],
+  },
+});

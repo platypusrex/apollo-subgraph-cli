@@ -1,4 +1,4 @@
-import { execSync } from "child_process"
+import { execSync } from 'child_process';
 
 export const isGitRepo = () => {
   try {
@@ -7,4 +7,4 @@ export const isGitRepo = () => {
   } catch (e) {
     return false;
   }
-}
+};

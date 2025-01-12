@@ -13,12 +13,7 @@ const listrOptions: ListrBaseClassOptions = {
 
 export const tasks = {
   init: new Listr<ListrInitContext>(
-    [
-      generateSubgraphConfig,
-      generateSubgraphSchema,
-      updatePackageJSON,
-      addFilesToGitIndex,
-    ],
+    [generateSubgraphConfig, generateSubgraphSchema, updatePackageJSON, addFilesToGitIndex],
     listrOptions
   ),
   print: new Listr<ListrContext>([generateSubgraphSchema], listrOptions),

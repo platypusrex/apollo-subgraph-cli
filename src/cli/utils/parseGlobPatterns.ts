@@ -7,6 +7,10 @@ export async function parseGlobPatterns(
   patterns: string[],
   type: PathType = 'file'
 ): Promise<string[]> {
-  const entries = await fg(patterns, { dot: true, onlyFiles: type === 'file', onlyDirectories: type === 'directory' });
+  const entries = await fg(patterns, {
+    dot: true,
+    onlyFiles: type === 'file',
+    onlyDirectories: type === 'directory',
+  });
   return entries.map((entry) => resolve(process.cwd(), entry));
 }

@@ -31,4 +31,4 @@ export const commonIgnoreDirs = new Set([
   'target',
   'vendor',
   'migrations',
-])
+]);

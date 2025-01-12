@@ -10,8 +10,10 @@ describe('my-cli', () => {
     const programPath = resolve(__dirname, '../src/cli/index.ts');
     const configPath = resolve(__dirname, './subgraph.config.ts');
     console.log(configPath);
-  
-    const { stdout } = await exec(`node --import tsx ${programPath} schema print --config ${configPath}`);
+
+    const { stdout } = await exec(
+      `node --import tsx ${programPath} schema print --config ${configPath}`
+    );
     // console.log({ stdout, ...rest })
     console.log(stdout?.on('data', (data) => console.log(data.toString())));
     // expect(stdout).toBe('Hello, John!');

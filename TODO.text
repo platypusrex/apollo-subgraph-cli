@@ -14,4 +14,4 @@
 7. add husky/commitlint
 8. add changesets for managing/automating releases
 9. add github actions
-10. add prompt to ask whether to perform git add to stage files in init command
+10. add prompt to ask whether to perform git add to stage files in init command ✅

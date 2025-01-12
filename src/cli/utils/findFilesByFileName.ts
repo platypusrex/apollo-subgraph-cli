@@ -9,9 +9,9 @@ export const findFilesByFileName = (dir: string, fileNames: string[], ig: Ignore
     const entries = readdirSync(currentDir, { withFileTypes: true });
 
     for (const entry of entries) {
-      const relativePath = relative(process.cwd(), join(currentDir, entry.name))
+      const relativePath = relative(process.cwd(), join(currentDir, entry.name));
       if (ig.ignores(relativePath)) continue;
-      
+
       const entryPath = join(currentDir, entry.name);
       if (entry.isDirectory()) {
         searchDir(entryPath);

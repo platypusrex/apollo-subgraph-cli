@@ -14,8 +14,8 @@ const subTaskOptions = {
 
 export const addFilesToGitIndex: ListrTask<ListrInitContext> = {
   title: 'Add files to git',
-  skip: ({ git = false }) => !git ? 'Skipping add files to git' : false,
-  task: ({ schema: { output} }, task) =>
+  skip: ({ git = false }) => (!git ? 'Skipping add files to git' : false),
+  task: ({ schema: { output } }, task) =>
     task.newListr(
       [
         {
@@ -23,11 +23,11 @@ export const addFilesToGitIndex: ListrTask<ListrInitContext> = {
           task: (_, task) => {
             const gitRepo = isGitRepo();
             if (!gitRepo) {
-              task.output = 'No git repo found.'
+              task.output = 'No git repo found.';
               return;
             }
 
-            const { name, ext } = parse(output)
+            const { name, ext } = parse(output);
             const generatedSchemaFileName = `${name}.${ext}`;
             const fileNames = ['subgraph.config.ts', 'package.json', generatedSchemaFileName];
 
@@ -39,13 +39,13 @@ export const addFilesToGitIndex: ListrTask<ListrInitContext> = {
               ig.add(gitignoreContent);
             } else {
               // If there's no `.gitignore`, use the common list of ignored directories
-              ig.add([...commonIgnoreDirs].map(dir => `/${dir}/`));
+              ig.add([...commonIgnoreDirs].map((dir) => `/${dir}/`));
             }
 
             try {
               const filesPaths = findFilesByFileName(process.cwd(), fileNames, ig);
               if (!filesPaths.length) {
-                task.output = 'No files found to add to git staging.'
+                task.output = 'No files found to add to git staging.';
                 return;
               } else {
                 execSync(`git add ${filesPaths.map((file) => `${file}`).join(' ')}`);
