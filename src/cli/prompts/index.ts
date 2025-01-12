@@ -38,3 +38,6 @@ export const getCheckScriptName = async (): Promise<string> =>
     default: 'schema:check',
     validate: (val) => !!val?.length,
   });
+
+export const confirmAddFilesToGitStaging = async (): Promise<boolean> => 
+  confirm({ message: 'Do you want to add the new files to the git staging area?' });
