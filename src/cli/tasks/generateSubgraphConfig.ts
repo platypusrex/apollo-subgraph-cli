@@ -4,7 +4,6 @@ import type { ListrTask } from 'listr2';
 import type { ListrContext } from '../types';
 import { subgraphConfigTemplate } from '../templates';
 
-
 const subTaskOptions = {
   concurrent: false,
   rendererOptions: { collapse: true },

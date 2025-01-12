@@ -62,16 +62,20 @@
     "lint": "pnpm biome lint",
     "lint:fix": "pnpm biome lint --fix",
     "check:types": "tsc --noEmit",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.10.5",
     "chokidar": "^4.0.3",
     "execa": "^9.5.2",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
+    "husky": "^9.1.7",
     "rimraf": "^6.0.1",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",

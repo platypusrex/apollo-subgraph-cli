@@ -2,7 +2,13 @@ import fs from 'fs-extra';
 import { Command } from 'commander';
 import { cliBanner, commands } from './constants';
 import { tasks } from './tasks';
-import { getOutputPath, getPrintScriptName, getCheckScriptName, getSchemaPaths, confirmAddFilesToGitStaging } from './prompts';
+import {
+  getOutputPath,
+  getPrintScriptName,
+  getCheckScriptName,
+  getSchemaPaths,
+  confirmAddFilesToGitStaging,
+} from './prompts';
 import {
   buildFileWatcher,
   generateSubgraphSchema,
@@ -25,7 +31,7 @@ import {
   schema
     .command(commands.check)
     .option('-c, --config <path-to-subgraph-config>', 'The path to your subgraph config file')
-    .option('-s, --schema <schema-location...>', 'Location of your subgraph\'s typeDefs')
+    .option('-s, --schema <schema-location...>', "Location of your subgraph's typeDefs")
     .action(async (options) => {
       cliBanner.header('schema check');
 
@@ -47,7 +53,7 @@ import {
   schema
     .command(commands.print)
     .option('-c, --config <path-to-subgraph-config>', 'The path to your subgraph config file')
-    .option('-s, --schema <schema-location...>', 'Location of your subgraph\'s typeDefs')
+    .option('-s, --schema <schema-location...>', "Location of your subgraph's typeDefs")
     .option('-o, --output <output-path>', 'The path to the printed schema file')
     .option('-w, --watch', 'Watch for file changes and print the resulting schema file')
     .action(async (options) => {
@@ -87,13 +93,13 @@ import {
 
   schema.command(commands.init).action(async () => {
     cliBanner.header('schema init');
-    console.log('Let\'s get started by answering a few questions about your service.\n');
+    console.log("Let's get started by answering a few questions about your service.\n");
 
     const schemaPaths = await getSchemaPaths();
     const outputPath = await getOutputPath();
     const printScriptName = await getPrintScriptName();
     const checkScriptName = await getCheckScriptName();
-    const git = await confirmAddFilesToGitStaging()
+    const git = await confirmAddFilesToGitStaging();
 
     console.log('\n');
 
