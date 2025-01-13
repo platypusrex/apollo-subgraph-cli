@@ -18,8 +18,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
-    "types": ["vitest/globals"]
+    "target": "ESNext"
   },
   "exclude": ["dist", "node_modules", "example"],
   "include": ["src/**/*", "test/**/*"]
