@@ -2,7 +2,7 @@ type Post {
   id: Int!
   title: String!
   content: String!
-  userId: Int!
+  userId: Int! @inaccessible
 }
 
 type Query {
