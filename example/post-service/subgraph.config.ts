@@ -7,7 +7,7 @@ import type { SubgraphConfig } from 'apollo-subgraph-cli'
 
 const config: SubgraphConfig = {
   schema: ['./src/gql/schema/typeDefs/*.graphql'],
-  output: './schema.graphql'
+  output: './src/gql/schema/schema.graphql'
 }
 
 export default config
