@@ -1,12 +1,13 @@
 import { parse } from 'path';
 import chalk from 'chalk';
-import chokidar from 'chokidar';
 import { logPrefix } from './logPrefix';
 import { parseGlobPatterns } from './parseGlobPatterns';
 import { generateSubgraphSchema } from './generateSubgraphSchema';
+import { loadChokidar } from './loadChokidar';
 
 export const buildFileWatcher = async (gqlSchemaPath: string[], outputPath: string) => {
   const schemaPaths = await parseGlobPatterns(gqlSchemaPath, 'file');
+  const chokidar = await loadChokidar();
   const watcher = chokidar.watch(schemaPaths, { persistent: true });
 
   const printedPaths = schemaPaths

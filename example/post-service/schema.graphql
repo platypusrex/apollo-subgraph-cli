@@ -1,5 +1,5 @@
 schema
-  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key", "@shareable"])
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key", "@shareable", "@inaccessible"])
 {
   query: Query
 }
@@ -8,7 +8,7 @@ type Post {
   id: Int!
   title: String!
   content: String!
-  userId: Int!
+  userId: Int! @inaccessible
 }
 
 type Query {
