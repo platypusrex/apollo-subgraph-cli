@@ -2,7 +2,7 @@ import { resolveModule } from './resolveModule';
 
 export const loadChokidar = async () => {
   try {
-    const chokidarPath = await resolveModule('chokidar', process.cwd());
+    await resolveModule('chokidar', process.cwd());
     return await import('chokidar');
   } catch (e) {
     throw new Error(
