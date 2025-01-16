@@ -18,7 +18,7 @@
     "@graphql-codegen/typescript": "4.1.2",
     "@graphql-codegen/typescript-resolvers": "4.4.1",
     "@types/node": "^22.10.7",
-    "apollo-subgraph-cli": "file:apollo-subgraph-cli-0.0.1.tgz",
+    "apollo-subgraph-cli": "latest",
     "typescript": "^5.7.3"
   },
   "dependencies": {
