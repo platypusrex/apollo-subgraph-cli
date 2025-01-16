@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "generate": "graphql-codegen --config ../codegen.ts",
-    "schema:print": "subgraph-schema print --config subgraph.config.ts",
-    "schema:check": "subgraph-schema check --config subgraph.config.ts"
+    "schema:print": "subgraph schema print --config subgraph.config.ts",
+    "schema:check": "subgraph schema check --config subgraph.config.ts"
   },
   "keywords": [],
   "author": "Frank Cooke",
@@ -17,16 +17,16 @@
     "@graphql-codegen/cli": "5.0.3",
     "@graphql-codegen/typescript": "4.1.2",
     "@graphql-codegen/typescript-resolvers": "4.4.1",
-    "@types/node": "^22.10.5",
+    "@types/node": "^22.10.7",
+    "apollo-subgraph-cli": "file:apollo-subgraph-cli-0.0.1.tgz",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "@apollo/subgraph": "^2.9.3",
     "@graphql-tools/merge": "^9.0.17",
-    "apollo-subgraph-cli": "file:apollo-subgraph-cli-1.0.0.tgz",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
-    "graphql-yoga": "^5.10.9",
+    "graphql-yoga": "^5.10.10",
     "tsx": "^4.19.2"
   }
 }

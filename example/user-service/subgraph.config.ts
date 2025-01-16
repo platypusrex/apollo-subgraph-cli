@@ -6,7 +6,7 @@ import type { SubgraphConfig } from 'apollo-subgraph-cli'
  */
 
 const config: SubgraphConfig = {
-  schema: ['./src/gql/schema/typeDefs/*.ts', '!*/index.ts'],
+  schema: ['./src/gql/schema/typeDefs/*.ts', '!./src/gql/schema/typeDefs/index.ts'],
   output: './schema.graphql'
 }
 
