@@ -63,7 +63,11 @@
     "lint:fix": "pnpm biome lint --fix",
     "check:types": "tsc --noEmit",
     "test": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "version": "changeset version",
+    "ci": "pnpm lint && pnpm format && pnpm check:types && pnpm build",
+    "prerelease": "pnpm run ci",
+    "release": "pnpm run prerelease && changeset publish && git push --follow-tags"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
