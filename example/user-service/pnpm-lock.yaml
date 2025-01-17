@@ -40,8 +40,8 @@ importers:
         specifier: ^22.10.7
         version: 22.10.7
       apollo-subgraph-cli:
-        specifier: file:apollo-subgraph-cli-0.0.1.tgz
-        version: file:apollo-subgraph-cli-0.0.1.tgz(@types/node@22.10.7)(chokidar@4.0.3)(graphql@16.10.0)(typescript@5.7.3)
+        specifier: latest
+        version: 0.0.1(@types/node@22.10.7)(chokidar@4.0.3)(graphql@16.10.0)(typescript@5.7.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -966,9 +966,8 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  apollo-subgraph-cli@file:apollo-subgraph-cli-0.0.1.tgz:
-    resolution: {integrity: sha512-OXAsxqZBBHsYwtyxN/GG/bcpFv2Ed+n0Aso4cew9pr0h3uDtDZOCy8TjM+UGU+08aNDgkjlJCTeGH4CT3fGjIA==, tarball: file:apollo-subgraph-cli-0.0.1.tgz}
-    version: 0.0.1
+  apollo-subgraph-cli@0.0.1:
+    resolution: {integrity: sha512-Efd3vohpCt3dcO2CQrh8EKPVOUHM4ulAulhEILShfSy1s9MCloim7j02cQ86WAwxzTH4EPgtwRnj6hxfUJxXwg==}
     engines: {node: '>=10'}
     hasBin: true
     peerDependencies:
@@ -3322,7 +3321,7 @@ snapshots:
 
   ansi-styles@6.2.1: {}
 
-  apollo-subgraph-cli@file:apollo-subgraph-cli-0.0.1.tgz(@types/node@22.10.7)(chokidar@4.0.3)(graphql@16.10.0)(typescript@5.7.3):
+  apollo-subgraph-cli@0.0.1(@types/node@22.10.7)(chokidar@4.0.3)(graphql@16.10.0)(typescript@5.7.3):
     dependencies:
       '@apollo/subgraph': 2.9.3(graphql@16.10.0)
       '@graphql-tools/code-file-loader': 8.1.13(graphql@16.10.0)
