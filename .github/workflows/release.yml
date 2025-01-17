@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-concurrency: ${{ github.workflow }}-${{github.ref}}
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     name: Release
@@ -22,23 +22,22 @@ jobs:
           version: 9
           run_install: false
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Create PR or publish release
+      - name: Create PR or Publish release
         id: changesets
         uses: changesets/action@v1
         with:
           version: pnpm run version
           commit: 'chore: update versions'
           title: 'chore: update versions'
-          publish: pnpm run publish
+          publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
