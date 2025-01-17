@@ -1,8 +1,8 @@
-# Apollo Subgraph CLI
+# apollo-subgraph-cli
+
 [![npm Package](https://img.shields.io/npm/v/apollo-subgraph-cli.svg)](https://www.npmjs.com/package/apollo-subgraph-cli)
 [![License](https://img.shields.io/github/license/platypusrex/apollo-subgraph-cli.svg)](https://github.com/platypusrex/apollo-subgraph-cli/blob/main/LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/platypusrex/apollo-subgraph-cli/release.yml)](https://github.com/platypusrex/apollo-subgraph-cli/actions/workflows/release.yml)
-
 
 ## Overview
 
