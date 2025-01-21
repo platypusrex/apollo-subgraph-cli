@@ -1,5 +1,11 @@
 # apollo-subgraph-cli
 
+## 0.1.0
+
+### Minor Changes
+
+- 8e2777c: Moving @apollo/subgraph to peer dependency in an attempt to avoid multiple versions of the package being installed by consumers. Docs have been updated to call out the installation of @apollo/subgraph as a requirement.
+
 ## 0.0.3
 
 ### Patch Changes
