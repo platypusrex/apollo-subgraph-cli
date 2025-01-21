@@ -1,5 +1,11 @@
 # apollo-subgraph-cli
 
+## 0.0.3
+
+### Patch Changes
+
+- 9ab8398: Updates documentation to better explain the requirements for file watching when using the print command.
+
 ## 0.0.2
 
 ### Patch Changes
