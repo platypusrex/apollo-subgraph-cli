@@ -131,7 +131,15 @@ subgraph schema print [options]
 npx subgraph schema print --schema './src/gql/schema/typeDefs/*.graphql' --output ./schema.graphql
 ```
 
-**Tip:** For development environments, consider adding a watcher to your npm scripts using the `concurrently` package. For example:
+**Tip:** For development environments, it is recommended that you utilize the watch flag when running your server. 
+This package uses [chokidar](https://github.com/paulmillr/chokidar) for file watching. Chokidar is a peer dependency,
+so if you decide to utilize the watch flag your will need to install this package in your codebase. To run the file
+watcher and your server, it is recommended that you use the [concurrently](https://github.com/open-cli-tools/concurrently)
+package. Example here:
+
+```bash
+npm add -D chokidar concurrently
+```
 
 ```json
 "scripts": {
