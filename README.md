@@ -21,23 +21,26 @@ configuration files for streamlined workflows.
 
 ## Installation
 
-Install the CLI as a development dependency using your preferred package manager:
+Install the CLI as a development dependency, along with the required peer dependencies, using your preferred package manager:
 
 **npm**
 
 ```bash
+npm add graphql @apollo/subgraph
 npm add -D apollo-subgraph-cli
 ```
 
 **pnpm**
 
 ```bash
+pnpm add graphql @apollo/subgraph
 pnpm add -D apollo-subgraph-cli
 ```
 
 **yarn**
 
 ```bash
+yarn add graphql @apollo/subgraph
 yarn add -D apollo-subgraph-cli
 ```
 
