@@ -17,6 +17,8 @@ configuration files for streamlined workflows.
 - **Config-Driven Workflow**: Use a `subgraph.config.ts` file to centralize and simplify CLI command configurations.
 - **Interactive Initialization**: Quickly set up a new subgraph schema project with helpful prompts.
 
+![init demo](init_demo.gif)
+
 ---
 
 ## Installation
@@ -254,3 +256,8 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 This project is licensed under the [MIT License](./LICENSE).
 
+npx subgraph schema init
+
+./src/gql/schema/typeDefs/*.ts
+
+!./src/gql/schema/typeDefs/index.ts
