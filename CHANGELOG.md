@@ -1,5 +1,11 @@
 # apollo-subgraph-cli
 
+## 0.1.1
+
+### Patch Changes
+
+- 70a26d6: Adds a gif demo of the subgraph schema init command to the documentation.
+
 ## 0.1.0
 
 ### Minor Changes
